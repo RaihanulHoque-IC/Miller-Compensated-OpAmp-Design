@@ -36,10 +36,12 @@ The two-stage OpAmp topology consists of a **differential input stage** followed
 | Compensation Capacitor (C_c) | 500 fF |
 | Compensation Resistor (R_c) | 2 kΩ |
 
-> 📷 *Schematic figure — add your image here:*
-> `![Two-Stage OpAmp Schematic](figures/schematic_two_stage_opamp.png)`
+> 📷 *Schematic:*
+> <figure>
+  <img src="./Cadence_figures/2_stage_Opamp_Schematic.jpg" width="900">
+  <figcaption><b>Fig: Miller compensated two stage OpAmp</b> </figcaption>
+</figure>
 
----
 
 ## Transistor Characterization
 
@@ -51,25 +53,28 @@ Transistors were characterized using the **gm/Id methodology**, which captures t
 
 ### NMOS Characterization
 
-> 📷 *Add NMOS characterization schematic and plots here:*
-> ```
-> ![NMOS Characterization Schematic](figures/nmos_char_schematic.png)
-> ![NMOS Id/W vs gm/Id](figures/nmos_idw_vs_gmid.png)
-> ![NMOS gm/Id vs Vov](figures/nmos_gmid_vs_vov.png)
-> ![NMOS gm/gds vs gm/Id](figures/nmos_gmgds_vs_gmid.png)
-> ```
+> 📷 *NMOS characterization:*
+
+[gm/id vs Vov](Cadence_figures/NMOS_gmid_vov.jpg)
+
+[fT vs gm/id](Cadence_figures/NMOS_fT_gmid.jpg)
+
+[gm/gds vs gm/id](Cadence_figures/NMOS_gmro_gmid.jpg)
+
+[Id/W vs gm/id](Cadence_figures/NMOS_IdW_gmid.jpg)
 
 ### PMOS Characterization
 
-> 📷 *Add PMOS characterization schematic and plots here:*
-> ```
-> ![PMOS Characterization Schematic](figures/pmos_char_schematic.png)
-> ![PMOS Id/W vs gm/Id](figures/pmos_idw_vs_gmid.png)
-> ![PMOS gm/Id vs Vov](figures/pmos_gmid_vs_vov.png)
-> ![PMOS gm/gds vs gm/Id](figures/pmos_gmgds_vs_gmid.png)
-> ```
+> 📷 *PMOS characterization:*
 
----
+[gm/id vs Vov](Cadence_figures/PMOS_gmid_vov.jpg)
+
+[fT vs gm/id](Cadence_figures/PMOS_fT_gmid.jpg)
+
+[gm/gds vs gm/id](Cadence_figures/PMOS_gmro_gmid.jpg)
+
+[Id/W vs gm/id](Cadence_figures/PMOS_IdW_gmid.jpg)
+
 
 ## Simulation Results
 
@@ -80,8 +85,10 @@ The Bode plot shows the **loop gain magnitude** and **phase response** across fr
 - A well-controlled roll-off with a **Unity Gain Frequency of 60 MHz**
 - A **Phase Margin of 67°**, ensuring robust closed-loop stability
 
-> 📷 *Add Bode plot here:*
-> `![AC Loop Gain and Phase](figures/sim_bode_loop_gain_phase.png)`
+> <figure>
+  <img src="./Cadence_figures/Loop_G_P.jpg" width="900">
+  <figcaption><b>Fig: Loop Gain and Phase</b> </figcaption>
+</figure>
 
 ---
 
@@ -94,19 +101,19 @@ The **Power Supply Rejection Ratio** plot shows both PSRR+ (positive rail) and P
 | PSRR+ (low frequency) | ~60 dB |
 | PSRR− (low frequency) | ~70 dB |
 
-> 📷 *Add PSRR plot here:*
-> `![PSRR Simulation](figures/sim_psrr.png)`
-
----
+> <figure>
+  <img src="./Cadence_figures/PSRR_Pos_Neg.jpg" width="900">
+  <figcaption><b>Fig: Positive and Negative PSRR</b> </figcaption>
+</figure>
 
 ### CMRR
 
 The **Common Mode Rejection Ratio** remains flat at **~60 dB** across low and mid frequencies, with the expected roll-off at higher frequencies due to parasitic and mismatch effects.
 
-> 📷 *Add CMRR plot here:*
-> `![CMRR Simulation](figures/sim_cmrr.png)`
-
----
+> <figure>
+  <img src="./Cadence_figures/CMRR_Offset.jpg" width="900">
+  <figcaption><b>Fig: CMRR and Offset</b> </figcaption>
+</figure>
 
 ### Corner Simulation
 
@@ -120,4 +127,4 @@ The design was validated across process-voltage-temperature (PVT) corners to con
 | 3 dB BW (KHz) | 176.8 | 170 | 179.2 |
 | CMRR (dB) | 60.1 | 58.91 | 61.05 |
 
-The results confirm that the design maintains **consistent performance** across all PVT corners, with phase margin staying above 66° in all cases — well within the stability requirement.
+-The results confirm that the design maintains **consistent performance** across all PVT corners, with phase margin staying above 66° in all cases well within the stability requirement.
